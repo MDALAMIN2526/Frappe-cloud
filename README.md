@@ -52,8 +52,12 @@ Enable firewall:
 sudo ufw allow OpenSSH
 sudo ufw enable
 ```
+On both machines, make sure UDP port 51820 is open:
 
----
+```bash
+sudo ufw allow 51820/udp
+sudo iptables -L -n -v
+```
 
 ## 🔒 Step 2: Configure WireGuard Private Network
 
