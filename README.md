@@ -131,6 +131,13 @@ sudo systemctl enable wg-quick@wg0
 sudo systemctl start wg-quick@wg0
 ```
 
+Manage WireGuard:
+
+```bash
+sudo wg-quick down wg0
+sudo wg-quick up wg0
+sudo wg
+```
 Test connectivity:
 
 ```bash
