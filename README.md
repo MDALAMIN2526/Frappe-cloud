@@ -196,6 +196,8 @@ sudo apt install python3-venv python3-pip redis-server wkhtmltopdf supervisor ng
 ```bash
 pip3 install --upgrade pip setuptools wheel
 pip3 install frappe-bench
+echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
+source ~/.bashrc
 bench --version
 ```
 
