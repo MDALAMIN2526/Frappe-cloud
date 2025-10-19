@@ -34,8 +34,8 @@ It is designed for multiple companies/sites (e.g., 20 companies, ~300 users) and
 
 | Role | CPU | RAM | Disk |
 |------|-----|-----|------|
-| Press + Frappe | 8 cores | 32 GB | 300 GB SSD |
-| DB + Redis | 8 cores | 32 GB | 400 GB SSD |
+| Press + Frappe + Redis | 8 cores | 32 GB | 300 GB SSD |
+| DB | 8 cores | 32 GB | 500 GB SSD |
 
 
 
