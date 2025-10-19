@@ -10,8 +10,8 @@ It is designed for multiple companies/sites (e.g., 20 companies, ~300 users) and
 
 | Server | Role | Private IP (WireGuard) | Public Access |
 |--------|------|------------------------|---------------|
-| Press + Frappe | Application Server | 10.10.0.1 | Cloudflare Tunnel |
-| Database | DB + Redis | 10.10.0.2 | None (private only) |
+| Press + Frappe + Redis | Application Server | 10.10.0.1 | Cloudflare Tunnel |
+| Database | DB | 10.10.0.2 | None (private only) |
 
 **Components:**
 - Press + Frappe (Bench, Redis, Node.js, Nginx)
