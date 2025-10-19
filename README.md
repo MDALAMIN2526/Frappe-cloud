@@ -148,7 +148,7 @@ EXIT;
 ### 1️⃣ Install Dependencies
 
 ```bash
-sudo apt install python3-dev python3.10-venv python3-pip redis-server wkhtmltopdf supervisor nginx -y
+sudo apt install python3-dev python3.8-venv python3-pip redis-server wkhtmltopdf supervisor nginx -y
 ```
 
 Install Node.js (v18 or later):
