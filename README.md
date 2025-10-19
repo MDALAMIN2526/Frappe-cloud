@@ -65,7 +65,7 @@ sudo apt install wireguard -y
 
 ### Generate Keys
 
-**Server 1 (Press + Frappe):**
+**Server 1 (Press + Frappe + Redis):**
 
 ```bash
 cd /etc/wireguard
@@ -73,7 +73,7 @@ umask 077
 wg genkey | tee server1.key | wg pubkey > server1.pub
 ```
 
-**Server 2 (Database + Redis):**
+**Server 2 (Database):**
 
 ```bash
 cd /etc/wireguard
@@ -166,7 +166,7 @@ sudo systemctl restart mariadb
 
 ---
 
-## ⚙️ Step 4: Press + Frappe Server Setup (Server 1)
+## ⚙️ Step 4: Press + Frappe + Redis Server Setup (Server 1)
 
 ### Install Dependencies
 
@@ -304,3 +304,7 @@ sudo ufw deny 3306   # DB only via WireGuard
 * [Cloudflare Tunnel Docs](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/)
 
 ### Diagram image showing the two-server architecture with WireGuard + Cloudflare Tunnel
+![Diagram](Diagram.png)
+
+
+
