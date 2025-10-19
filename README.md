@@ -166,7 +166,7 @@ Create Frappe DB user (restricted to WireGuard network):
 
 ```sql
 CREATE DATABASE frappe_db;
-CREATE USER 'frappe_user'@'10.10.0.1' IDENTIFIED BY 'StrongPassword123!';
+CREATE USER 'frappe_user'@'10.10.0.1' IDENTIFIED BY '#a6f24eb9ee7a!';
 GRANT ALL PRIVILEGES ON frappe_db.* TO 'frappe_user'@'10.10.0.1';
 FLUSH PRIVILEGES;
 EXIT;
