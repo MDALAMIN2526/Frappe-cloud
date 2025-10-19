@@ -247,33 +247,62 @@ bench --site press.local install-app press
 
 ## 🌐 Step 5: Cloudflare Tunnel
 
-1. Install Cloudflare Tunnel Docker container:
+Create tunnel on Cloudflare dashboard or use token.
 
 ```bash
-sudo docker run -d --name cloudflared --restart always \
-  cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <YOUR_TUNNEL_TOKEN>
+
+sudo docker run -d --name cloudflared --restart always cloudflare/cloudflared:latest tunnel --no-autoupdate run --token <YOUR_TUNNEL_TOKEN>
 ```
 
-2. Configure tunnel (`/etc/cloudflared/config.yml`):
+This exposes Press publicly via HTTPS without open ports.
 
-```yaml
-tunnel: <TUNNEL_ID>
-credentials-file: /etc/cloudflared/<TUNNEL_ID>.json
-ingress:
-  - hostname: press.example.com
-    service: http://localhost:8000
-  - service: http_status:404
+## ✅ Step 6: Install Press
+```bash
+cd /opt
+sudo git clone https://github.com/frappe/press.git
+cd press
+cp example.env .env
+
 ```
+Edit .env:
 
-3. Restart tunnel:
+sudo nano .env
+
+
+## Set values:
+```bash
+PRESS_DOMAIN=press.yourdomain.com
+DB_HOST=10.10.10.2
+DB_USER=frappe
+DB_PASSWORD=StrongPassword
+REDIS_HOST=10.10.10.2
+DNS_PROVIDER=cloudflare
+CLOUDFLARE_API_TOKEN=your_api_token
+CLOUDFLARE_ZONE=yourdomain.com
+```
+## ✅ Step 7: Run Press
+
+If your Docker Compose uses dash:
 
 ```bash
-sudo systemctl restart cloudflared
+sudo docker-compose up -d
 ```
 
----
+Otherwise:
 
-## ✅ Step 6: Verify Setup
+```bash
+sudo docker compose up -d
+
+```
+Wait for containers to start.
+
+Step ✅ 8: Access Press
+
+Visit:
+
+https://press.yourdomain.com
+
+## ✅ Step 9: Verify Setup
 
 * WireGuard connectivity:
 
