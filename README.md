@@ -82,9 +82,8 @@ wg genkey | tee server2.key | wg pubkey > server2.pub
 ```
 **Read the keys:**
 ```bash
-echo "Private Key:"
+
 cat /etc/wireguard/server1.key
-echo "Public Key:"
 cat /etc/wireguard/server1.pub
 
 ```
